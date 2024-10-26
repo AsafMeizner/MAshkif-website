@@ -108,7 +108,7 @@ const Home = () => {
                       activeSection === index ? "opacity-100 transform-none" : "opacity-0 -translate-y-4"
                     }`}
                   >
-                    <h1 className="text-6xl font-bold leading-tight">{section.title}</h1>
+                    <h1 style={{fontFamily: 'Gilroy-ExtraBold'}} className="text-6xl font-bold leading-tight">{section.title}</h1>
                   </div>
                 ))}
               </div>

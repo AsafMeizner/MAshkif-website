@@ -14,10 +14,21 @@
   }
 }
 
+/* fonts     ======================================== */
+@font-face {
+  font-family: 'Gilroy-ExtraBold';
+  src: url('./fonts/Gilroy-ExtraBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Gilroy-Light';
+  src: url('./fonts/Gilroy-Light.woff') format('woff');
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Gilroy-Light', 'Gilroy-ExtraBold', sans-serif;
 }
 
 /* scrollbar ======================================== */
@@ -50,3 +61,4 @@ input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
