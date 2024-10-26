@@ -137,7 +137,7 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="absolute right-40 bottom-20 w-[800px] h-[800px] preserve-3d">
+            <div className="absolute right-40 bottom-20 w-[42vw] h-[42vw] preserve-3d">
               <div
                 style={{
                   transform: "rotateX(30deg) rotateY(-20deg) rotateZ(12deg)",
