@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faServer, faUsers } from "@fortawesome/free-solid-svg-icons";
 
 const sections = [
   {
@@ -313,9 +315,7 @@ const Home = () => {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="flex flex-col items-center space-y-4">
-              <svg className="w-16 h-16 text-[#e74c3c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 11c0-1.657-2.686-3-6-3s-6 1.343-6 3 2.686 3 6 3 6-1.343 6-3z"/>
-              </svg>
+              <FontAwesomeIcon icon={faServer} className="w-16 h-16 text-[#e74c3c]" />
               <h3 className="text-2xl font-semibold">Independent Server Management</h3>
               <p className="text-gray-400 text-center max-w-md">
                 Ensure data privacy and team independence by hosting your own server.
@@ -323,9 +323,7 @@ const Home = () => {
               </p>
             </div>
             <div className="flex flex-col items-center space-y-4">
-              <svg className="w-16 h-16 text-[#e74c3c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 10h1V9c0-.552.224-1.052.586-1.414l8.293-8.293A2 2 0 0114.414.586l8.293 8.293A2 2 0 0123 10v1h-1v10a2 2 0 01-2 2h-2V6h-3.586L10 0H8v22H6a2 2 0 01-2-2V10z"/>
-              </svg>
+              <FontAwesomeIcon icon={faUsers} className="w-16 h-16 text-[#e74c3c]" />
               <h3 className="text-2xl font-semibold">Collaborate Across Teams</h3>
               <p className="text-gray-400 text-center max-w-md">
                 Share your server with other teams, allowing collaboration while keeping data secure.
