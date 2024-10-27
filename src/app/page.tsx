@@ -302,7 +302,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="h-screen bg-[#1a1e24] text-white flex items-center justify-center">
+      <div className="h-screen bg-[#111217] text-white flex items-center justify-center">
         <div className="max-w-7xl mx-auto px-6 text-center space-y-10">
           <h2 className="text-5xl font-bold" style={{ fontFamily: "Gilroy-ExtraBold" }}>
             Run Your Own Server, Share with Other Teams
