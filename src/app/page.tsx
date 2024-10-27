@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 const sections = [
   {
@@ -16,13 +16,13 @@ const sections = [
     imageUrl: "/scouting-form.png",
   },
   {
-    title: "Advanced Analytics Dashboard",
+    title: "Advanced Analytics",
     description: "Get insights that matter with our powerful analytics engine.",
     buttonText: "Explore Analytics",
     imageUrl: "/specific-team.png",
   },
   {
-    title: "Custom Reporting Tools",
+    title: "highly customizable",
     description: "Create and share reports that tell your data's story.",
     buttonText: "Start Reporting",
     imageUrl: "/comparison.png",
@@ -32,9 +32,11 @@ const sections = [
 const Home = () => {
   const contentRef = useRef<HTMLDivElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
+  const mockupsRef = useRef<HTMLDivElement | null>(null);
   const [activeSection, setActiveSection] = useState(0);
   const [fadeIn, setFadeIn] = useState(true);
-  const [scrollPastSections, setScrollPastSections] = useState(false); // To track if we scrolled past the sections
+  const [scrollPastSections, setScrollPastSections] = useState(false);
+  const [mockupInView, setMockupInView] = useState(false);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -48,11 +50,10 @@ const Home = () => {
       const sectionHeight = window.innerHeight;
       const currentSection = Math.floor((scrollPosition + sectionHeight / 2) / sectionHeight);
 
-      // If the scroll position exceeds the last section, allow dots to scroll up naturally
       if (scrollPosition > (sections.length - 1) * sectionHeight) {
-        setScrollPastSections(true); // Dots will scroll with the page after last section
+        setScrollPastSections(true);
       } else {
-        setScrollPastSections(false); // Dots will stay fixed within sections
+        setScrollPastSections(false);
       }
 
       if (currentSection !== activeSection) {
@@ -61,6 +62,13 @@ const Home = () => {
           setActiveSection(Math.min(currentSection, sections.length - 1));
           setFadeIn(true);
         }, 300);
+      }
+
+      if (mockupsRef.current) {
+        const mockupTop = mockupsRef.current.getBoundingClientRect().top;
+        if (mockupTop < window.innerHeight - 100) {
+          setMockupInView(true);
+        }
       }
     };
 
@@ -108,7 +116,9 @@ const Home = () => {
                       activeSection === index ? "opacity-100 transform-none" : "opacity-0 -translate-y-4"
                     }`}
                   >
-                    <h1 style={{fontFamily: 'Gilroy-ExtraBold'}} className="text-6xl font-bold leading-tight">{section.title}</h1>
+                    <h1 style={{ fontFamily: "Gilroy-ExtraBold" }} className="text-6xl font-bold leading-tight">
+                      {section.title}
+                    </h1>
                   </div>
                 ))}
               </div>
@@ -176,53 +186,59 @@ const Home = () => {
         </div>
       </main>
 
-      {/* Extra content after the last section */}
       {/* Device Mockups Section */}
-      <div className="min-h-screen bg-[#1a1e24] text-white py-20">
-        <div className="max-w-7xl mx-auto px-6">
+      <div
+        ref={mockupsRef}
+        className={`min-h-screen bg-[#1a1e24] text-white py-20 transition-transform duration-1000 ${
+          mockupInView ? "animate-slide-up-fade" : "opacity-0"
+        } relative`}
+      >
+        {/* Background accents for added interest */}
+        {/* <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#222831] to-[#393e46] opacity-40 pointer-events-none"></div> */}
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Mockups Container */}
-            <div className="relative">
+            <div className="relative space-y-6">
               {/* Desktop Mockup */}
-              <div className="relative mx-auto border-gray-800 bg-gray-800 border-[16px] rounded-t-xl h-[172px] max-w-[301px] md:h-[294px] md:max-w-[512px] -translate-x-20">
+              <div className="hover:scale-105 transition-transform animate-sway">
+                <div className="relative mx-auto border-gray-800 bg-gray-800 border-[16px] rounded-t-xl h-[172px] max-w-[301px] md:h-[294px] md:max-w-[512px] -translate-x-20">
+                  <div className="rounded-xl overflow-hidden h-[140px] md:h-[262px]">
+                    <img src="/all-teams.png" className="h-[140px] md:h-[262px] w-full rounded-xl object-cover" alt="Desktop version" />
+                  </div>
+                </div>
+                <div className="relative mx-auto bg-gray-900 rounded-b-xl h-[24px] max-w-[301px] md:h-[42px] md:max-w-[512px] -translate-x-20"></div>
+                <div className="relative mx-auto bg-gray-800 rounded-b-xl h-[55px] max-w-[83px] md:h-[95px] md:max-w-[142px] -translate-x-20"></div>
+              </div>
+{/* 
+              <div className="hover:scale-105 transition-transform animate-sway relative mx-auto border-gray-800 bg-gray-800 border-[16px] rounded-t-xl h-[172px] max-w-[301px] md:h-[294px] md:max-w-[512px] -translate-x-20 translate-y-20">
                 <div className="rounded-xl overflow-hidden h-[140px] md:h-[262px]">
                   <img src="/all-teams.png" className="h-[140px] md:h-[262px] w-full rounded-xl object-cover" alt="Desktop version" />
                 </div>
               </div>
-              <div className="relative mx-auto bg-gray-900 rounded-b-xl h-[24px] max-w-[301px] md:h-[42px] md:max-w-[512px] -translate-x-20"></div>
-              <div className="relative mx-auto bg-gray-800 rounded-b-xl h-[55px] max-w-[83px] md:h-[95px] md:max-w-[142px] -translate-x-20"></div>
+              <div className="relative mx-auto bg-gray-900 rounded-b-xl h-[24px] max-w-[301px] md:h-[42px] md:max-w-[512px] -translate-x-20 translate-y-14"></div>
+              <div className="relative mx-auto bg-gray-800 rounded-b-xl h-[55px] max-w-[83px] md:h-[95px] md:max-w-[142px] -translate-x-20 translate-y-8"></div> */}
 
-              {/* Tablet Mockup - Positioned absolutely */}
-              <div className="absolute -right-8 top-1/2 transform translate-x-1/8 translate-y-3">
+              {/* Tablet Mockup */}
+              <div className="absolute -right-8 top-1/2 transform translate-x-1/8 translate-y-3 hover:-rotate-3 animate-sway-slow transition-transform">
                 <div className="relative border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[300px] w-[405px] md:h-[300px] md:w-[405px]">
-                  <div className="h-[32px] w-[3px] bg-gray-800 absolute -start-[17px] top-[72px] rounded-s-lg"></div>
-                  <div className="h-[46px] w-[3px] bg-gray-800 absolute -start-[17px] top-[124px] rounded-s-lg"></div>
-                  <div className="h-[46px] w-[3px] bg-gray-800 absolute -start-[17px] top-[178px] rounded-s-lg"></div>
                   <div className="rounded-[2rem] overflow-hidden h-[272px] w-[377px] bg-white">
                     <img src="/specific-team.png" className="h-full w-full object-cover" alt="Tablet version" />
                   </div>
                 </div>
               </div>
 
-              {/* Phone Mockup - Positioned absolutely */}
-              <div className="absolute -left-8 bottom-0 transform -translate-x-1/3 translate-y-1/4">
+              {/* Phone Mockup */}
+              <div className="absolute -left-8 bottom-0 transform -translate-x-1/3 translate-y-1/4 hover:rotate-6 animate-sway-faster transition-transform">
                 <div className="relative border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[400px] w-[200px]">
-                  <div className="w-[98px] h-[18px] bg-gray-800 top-0 rounded-b-[1rem] left-1/2 -translate-x-1/2 absolute"></div>
-                  <div className="h-[32px] w-[3px] bg-gray-800 absolute -start-[17px] top-[72px] rounded-s-lg"></div>
-                  <div className="h-[46px] w-[3px] bg-gray-800 absolute -start-[17px] top-[124px] rounded-s-lg"></div>
-                  <div className="h-[46px] w-[3px] bg-gray-800 absolute -start-[17px] top-[178px] rounded-s-lg"></div>
-                  <div className="h-[64px] w-[3px] bg-gray-800 absolute -end-[17px] top-[142px] rounded-e-lg"></div>
                   <div className="rounded-[2rem] overflow-hidden w-[172px] h-[372px] bg-white">
                     <img src="/comparison.png" className="w-full h-full object-cover" alt="Mobile version" />
                   </div>
                 </div>
               </div>
-
             </div>
 
             {/* Text Content */}
             <div className="space-y-8 lg:pl-12">
-              <h2 className="text-5xl font-bold" style={{fontFamily: 'Gilroy-ExtraBold'}}>
+              <h2 className="text-5xl font-bold" style={{ fontFamily: "Gilroy-ExtraBold" }}>
                 Available on all your devices
               </h2>
               <p className="text-xl text-gray-300">
