@@ -24,7 +24,7 @@ const sections = [
     imageUrl: "/specific-team.png",
   },
   {
-    title: "highly customizable",
+    title: "Highly customizable",
     description: "Create and share reports that tell your data's story.",
     buttonText: "Start Reporting",
     imageUrl: "/comparison.png",
@@ -188,86 +188,9 @@ const Home = () => {
         </div>
       </main>
 
-      {/* Device Mockups Section */}
-      <div
-        ref={mockupsRef}
-        className={`min-h-screen bg-[#1a1e24] text-white py-20 transition-transform duration-1000 ${
-          mockupInView ? "animate-slide-up-fade" : "opacity-0"
-        } relative`}
-      >
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative space-y-6">
-              {/* Desktop Mockup */}
-              <div className="hover:scale-105 transition-transform animate-sway">
-                <div className="relative mx-auto border-gray-800 bg-gray-800 border-[16px] rounded-t-xl h-[172px] max-w-[301px] md:h-[294px] md:max-w-[512px] -translate-x-20">
-                  <div className="rounded-xl overflow-hidden h-[140px] md:h-[262px]">
-                    <img src="/all-teams.png" className="h-[140px] md:h-[262px] w-full rounded-xl object-cover" alt="Desktop version" />
-                  </div>
-                </div>
-                <div className="relative mx-auto bg-gray-900 rounded-b-xl h-[24px] max-w-[301px] md:h-[42px] md:max-w-[512px] -translate-x-20"></div>
-                <div className="relative mx-auto bg-gray-800 rounded-b-xl h-[55px] max-w-[83px] md:h-[95px] md:max-w-[142px] -translate-x-20"></div>
-              </div>
-
-              {/* Tablet Mockup */}
-              <div className="absolute -right-8 top-1/2 transform translate-x-1/8 translate-y-3 hover:-rotate-3 animate-sway-slow transition-transform">
-                <div className="relative border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[300px] w-[405px] md:h-[300px] md:w-[405px]">
-                  <div className="rounded-[2rem] overflow-hidden h-[272px] w-[377px] bg-white">
-                    <img src="/specific-team.png" className="h-full w-full object-cover" alt="Tablet version" />
-                  </div>
-                </div>
-              </div>
-
-              {/* Phone Mockup */}
-              <div className="absolute -left-8 bottom-0 transform -translate-x-1/3 translate-y-1/4 hover:rotate-6 animate-sway-faster transition-transform">
-                <div className="relative border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[400px] w-[200px]">
-                  <div className="rounded-[2rem] overflow-hidden w-[172px] h-[372px] bg-white">
-                    <img src="/comparison.png" className="w-full h-full object-cover" alt="Mobile version" />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Text Content */}
-            <div className="space-y-8 lg:pl-12">
-              <h2 className="text-5xl font-bold" style={{ fontFamily: "Gilroy-ExtraBold" }}>
-                Available on all your devices
-              </h2>
-              <p className="text-xl text-gray-300">
-                Access Mashkif seamlessly across all your devices. Whether you're at your desk, on your tablet, or on the go with your phone, stay connected and productive with our fully responsive platform.
-              </p>
-              <ul className="space-y-4 text-gray-300">
-                <li className="flex items-center gap-3">
-                  <svg className="w-6 h-6 text-[#e74c3c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  Real-time sync across all devices
-                </li>
-                <li className="flex items-center gap-3">
-                  <svg className="w-6 h-6 text-[#e74c3c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  Optimized interface for each screen size
-                </li>
-                <li className="flex items-center gap-3">
-                  <svg className="w-6 h-6 text-[#e74c3c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  Offline capability for uninterrupted work
-                </li>
-              </ul>
-              <div className="flex items-center gap-6 pt-4">
-                <button className="bg-[#e74c3c] text-white px-8 py-4 rounded-md font-medium hover:bg-[#c0392b] transition-colors">
-                  Get Started Now
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="h-screen bg-[#111217] text-white flex items-center justify-center">
-        <div className="max-w-7xl mx-auto px-6 text-center space-y-10">
+      {/* Customization Features Section */}
+      <div className="h-screen bg-[#1a1e24] text-white py-20 flex items-center justify-center">
+        <div className="max-w-6xl mx-auto px-6 text-center space-y-12">
           <h2 className="text-5xl font-bold" style={{ fontFamily: "Gilroy-ExtraBold" }}>
             Complete Customization Without a Single Line of Code
           </h2>
@@ -275,28 +198,26 @@ const Home = () => {
             Take control with a fully customizable form and dashboard experience designed for teams of all kinds.
             Adapt the look and feel to fit your unique needs, all without needing to dive into code.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div className="p-8 rounded-lg bg-[#1a1e24] shadow-lg hover:scale-105 transition-transform">
-              <h3 className="text-2xl font-semibold">Customizable Forms</h3>
-              <p className="text-gray-400 mt-4">
-                Create your own forms with a simple drag-and-drop interface, set up for every field your team needs.
-                From scoring metrics to analytics inputs, make it work for your team, your way.
-              </p>
-            </div>
-            <div className="p-8 rounded-lg bg-[#1a1e24] shadow-lg hover:scale-105 transition-transform">
-              <h3 className="text-2xl font-semibold">Dynamic Dashboards</h3>
-              <p className="text-gray-400 mt-4">
-                Tailor dashboards with widgets and charts, letting your team focus on the stats that matter most.
-                Switch between different views effortlessly to keep everyone up to speed.
-              </p>
-            </div>
-            <div className="p-8 rounded-lg bg-[#1a1e24] shadow-lg hover:scale-105 transition-transform">
-              <h3 className="text-2xl font-semibold">No Coding Required</h3>
-              <p className="text-gray-400 mt-4">
-                We’ve made customization easy and intuitive, so you don’t need coding skills to make it happen.
-                Simply configure and deploy, adjusting in real time to match your needs.
-              </p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Customizable Forms",
+                description: "Create your own forms with a simple drag-and-drop interface for every field your team needs.",
+              },
+              {
+                title: "Dynamic Dashboards",
+                description: "Tailor dashboards with widgets and charts, focusing on the stats that matter most.",
+              },
+              {
+                title: "No Coding Required",
+                description: "Configure and deploy easily, making real-time adjustments as needed without coding skills.",
+              },
+            ].map((feature, index) => (
+              <div key={index} className="p-8 rounded-lg bg-[#22252c] shadow-md hover:shadow-lg hover:scale-105 transition-transform">
+                <h3 className="text-2xl font-semibold">{feature.title}</h3>
+                <p className="text-gray-400 mt-4">{feature.description}</p>
+              </div>
+            ))}
           </div>
           <button className="bg-[#e74c3c] text-white px-8 py-4 rounded-md font-medium hover:bg-[#c0392b] transition-colors">
             Start Customizing
@@ -304,32 +225,34 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="h-screen bg-[#111217] text-white flex items-center justify-center">
-        <div className="max-w-7xl mx-auto px-6 text-center space-y-10">
+      {/* Server Management Section */}
+      <div className="h-screen bg-[#111217] text-white flex items-center justify-center py-20">
+        <div className="max-w-6xl mx-auto px-6 text-center space-y-12">
           <h2 className="text-5xl font-bold" style={{ fontFamily: "Gilroy-ExtraBold" }}>
             Run Your Own Server, Share with Other Teams
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Every team can run their server to maintain complete control and data security.
-            Share insights and collaborate with other teams easily, keeping everyone in sync and ready to excel.
+            Maintain complete control and data security by hosting your server, while collaborating and sharing insights with other teams.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="flex flex-col items-center space-y-4">
-              <FontAwesomeIcon icon={faServer} className="w-16 h-16 text-[#e74c3c]" />
-              <h3 className="text-2xl font-semibold">Independent Server Management</h3>
-              <p className="text-gray-400 text-center max-w-md">
-                Ensure data privacy and team independence by hosting your own server.
-                Manage access, data, and security directly on your terms.
-              </p>
-            </div>
-            <div className="flex flex-col items-center space-y-4">
-              <FontAwesomeIcon icon={faUsers} className="w-16 h-16 text-[#e74c3c]" />
-              <h3 className="text-2xl font-semibold">Collaborate Across Teams</h3>
-              <p className="text-gray-400 text-center max-w-md">
-                Share your server with other teams, allowing collaboration while keeping data secure.
-                Work together on joint projects or just sync on the go.
-              </p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              {
+                icon: faServer,
+                title: "Independent Server Management",
+                description: "Host your server for data privacy and team independence, managing access and security.",
+              },
+              {
+                icon: faUsers,
+                title: "Collaborate Across Teams",
+                description: "Share your server with others, enabling safe collaboration and joint project management.",
+              },
+            ].map((feature, index) => (
+              <div key={index} className="flex flex-col items-center p-6 bg-[#22252c] rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-transform">
+                <FontAwesomeIcon icon={feature.icon} className="w-12 h-12 text-[#e74c3c] mb-4" />
+                <h3 className="text-2xl font-semibold">{feature.title}</h3>
+                <p className="text-gray-400 text-center mt-4">{feature.description}</p>
+              </div>
+            ))}
           </div>
           <button className="bg-[#e74c3c] text-white px-8 py-4 rounded-md font-medium hover:bg-[#c0392b] transition-colors">
             Learn More About Server Management
