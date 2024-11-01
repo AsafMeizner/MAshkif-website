@@ -25,9 +25,6 @@ const DownloadPage = () => {
 
   return (
     <div className="min-h-screen bg-[#111217] text-white flex flex-col items-center justify-center py-20 px-6">
-        <head>
-            <meta name="description" content="Download MAshkif App for iOS, Android, Windows, or directly from GitHub. Enhance your productivity with our cross-platform solution." />
-        </head>
         <div className="text-center mb-12">
             <h1 className="text-5xl font-bold" style={{ fontFamily: "Gilroy-ExtraBold" }}>
                 Download Mashkif App
