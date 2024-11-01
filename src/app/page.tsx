@@ -8,7 +8,7 @@ const sections = [
   {
     title: "Centralize your team's strategy",
     description: "Easily view real-time analytics built on human-collected data.",
-    buttonText: "Get Mashkif Dashboard",
+    buttonText: "Get MAshkif Dashboard",
     imageUrl: "/all-teams.png",
   },
   {
@@ -24,7 +24,7 @@ const sections = [
     imageUrl: "/specific-team.png",
   },
   {
-    title: "highly customizable",
+    title: "Highly customizable",
     description: "Create and share reports that tell your data's story.",
     buttonText: "Start Reporting",
     imageUrl: "/comparison.png",
@@ -266,73 +266,73 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="h-screen bg-[#111217] text-white flex items-center justify-center">
+      <div className="h-screen bg-gradient-to-b from-[#111217] to-[#1a1e24] text-white flex items-center justify-center">
         <div className="max-w-7xl mx-auto px-6 text-center space-y-10">
           <h2 className="text-5xl font-bold" style={{ fontFamily: "Gilroy-ExtraBold" }}>
-            Complete Customization Without a Single Line of Code
+            Customization Simplified
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Take control with a fully customizable form and dashboard experience designed for teams of all kinds.
-            Adapt the look and feel to fit your unique needs, all without needing to dive into code.
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            Empower your team with customizable tools that fit seamlessly into your workflow. Adapt forms, dashboards, and workflows with just a few clicks—no coding required.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div className="p-8 rounded-lg bg-[#1a1e24] shadow-lg hover:scale-105 transition-transform">
-              <h3 className="text-2xl font-semibold">Customizable Forms</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            <div className="p-8 rounded-lg bg-[#1f242b] shadow-lg hover:shadow-2xl transition-shadow">
+              <h3 className="text-2xl font-semibold">Intuitive Forms</h3>
               <p className="text-gray-400 mt-4">
-                Create your own forms with a simple drag-and-drop interface, set up for every field your team needs.
-                From scoring metrics to analytics inputs, make it work for your team, your way.
+                Design forms tailored to your data collection needs with a simple drag-and-drop interface.
               </p>
             </div>
-            <div className="p-8 rounded-lg bg-[#1a1e24] shadow-lg hover:scale-105 transition-transform">
-              <h3 className="text-2xl font-semibold">Dynamic Dashboards</h3>
+            <div className="p-8 rounded-lg bg-[#1f242b] shadow-lg hover:shadow-2xl transition-shadow">
+              <h3 className="text-2xl font-semibold">Modular Dashboards</h3>
               <p className="text-gray-400 mt-4">
-                Tailor dashboards with widgets and charts, letting your team focus on the stats that matter most.
-                Switch between different views effortlessly to keep everyone up to speed.
+                Customize dashboards to highlight your most important metrics and insights.
               </p>
             </div>
-            <div className="p-8 rounded-lg bg-[#1a1e24] shadow-lg hover:scale-105 transition-transform">
-              <h3 className="text-2xl font-semibold">No Coding Required</h3>
+            <div className="p-8 rounded-lg bg-[#1f242b] shadow-lg hover:shadow-2xl transition-shadow">
+              <h3 className="text-2xl font-semibold">Real-Time Updates</h3>
               <p className="text-gray-400 mt-4">
-                We’ve made customization easy and intuitive, so you don’t need coding skills to make it happen.
-                Simply configure and deploy, adjusting in real time to match your needs.
+                Adjust and view your customized setup in real-time without ever needing to code.
               </p>
             </div>
           </div>
-          <button className="bg-[#e74c3c] text-white px-8 py-4 rounded-md font-medium hover:bg-[#c0392b] transition-colors">
+          <button
+            className="mt-8 bg-[#e74c3c] text-white px-10 py-4 rounded-md font-medium hover:bg-[#c0392b] transition-colors"
+            onClick={() => window.location.href = '/download'}
+          >
             Start Customizing
           </button>
         </div>
       </div>
 
-      <div className="h-screen bg-[#111217] text-white flex items-center justify-center">
-        <div className="max-w-7xl mx-auto px-6 text-center space-y-10">
+      {/* Redesigned "Server Management" section */}
+      <div className="h-screen bg-[#0e1015] text-white flex items-center justify-center">
+        <div className="max-w-7xl mx-auto px-6 text-center space-y-12">
           <h2 className="text-5xl font-bold" style={{ fontFamily: "Gilroy-ExtraBold" }}>
-            Run Your Own Server, Share with Other Teams
+            Secure Server Management
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Every team can run their server to maintain complete control and data security.
-            Share insights and collaborate with other teams easily, keeping everyone in sync and ready to excel.
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            Run your own server and manage data independently. Collaborate with other teams while maintaining full control of your data.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="flex flex-col items-center space-y-4">
-              <FontAwesomeIcon icon={faServer} className="w-16 h-16 text-[#e74c3c]" />
-              <h3 className="text-2xl font-semibold">Independent Server Management</h3>
-              <p className="text-gray-400 text-center max-w-md">
-                Ensure data privacy and team independence by hosting your own server.
-                Manage access, data, and security directly on your terms.
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+            <div className="p-10 bg-[#1a1e24] rounded-lg shadow-md hover:shadow-xl transition-shadow flex flex-col items-center">
+              <FontAwesomeIcon icon={faServer} className="w-12 h-12 text-[#e74c3c]" />
+              <h3 className="mt-6 text-2xl font-semibold">Self-Hosted Servers</h3>
+              <p className="text-gray-400 mt-4 text-center">
+                Host your server to keep data secure and maintain complete control over your team's operations.
               </p>
             </div>
-            <div className="flex flex-col items-center space-y-4">
-              <FontAwesomeIcon icon={faUsers} className="w-16 h-16 text-[#e74c3c]" />
-              <h3 className="text-2xl font-semibold">Collaborate Across Teams</h3>
-              <p className="text-gray-400 text-center max-w-md">
-                Share your server with other teams, allowing collaboration while keeping data secure.
-                Work together on joint projects or just sync on the go.
+            <div className="p-10 bg-[#1a1e24] rounded-lg shadow-md hover:shadow-xl transition-shadow flex flex-col items-center">
+              <FontAwesomeIcon icon={faUsers} className="w-12 h-12 text-[#e74c3c]" />
+              <h3 className="mt-6 text-2xl font-semibold">Seamless Collaboration</h3>
+              <p className="text-gray-400 mt-4 text-center">
+                Connect with other teams easily while ensuring data privacy and secure communications.
               </p>
             </div>
           </div>
-          <button className="bg-[#e74c3c] text-white px-8 py-4 rounded-md font-medium hover:bg-[#c0392b] transition-colors">
-            Learn More About Server Management
+          <button
+            className="mt-8 bg-[#e74c3c] text-white px-10 py-4 rounded-md font-medium hover:bg-[#c0392b] transition-colors"
+            onClick={() => window.location.href = '/download'}
+          >
+            Learn More
           </button>
         </div>
       </div>
