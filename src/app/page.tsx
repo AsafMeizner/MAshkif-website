@@ -8,7 +8,7 @@ const sections = [
   {
     title: "Centralize your team's strategy",
     description: "Easily view real-time analytics built on human-collected data.",
-    buttonText: "Get Mashkif Dashboard",
+    buttonText: "Get MAshkif Dashboard",
     imageUrl: "/all-teams.png",
   },
   {
@@ -188,74 +188,73 @@ const Home = () => {
         </div>
       </main>
 
-      {/* Customization Features Section */}
-      <div className="h-screen bg-[#1a1e24] text-white py-20 flex items-center justify-center">
-        <div className="max-w-6xl mx-auto px-6 text-center space-y-12">
+      <div className="h-screen bg-gradient-to-b from-[#111217] to-[#1a1e24] text-white flex items-center justify-center">
+        <div className="max-w-7xl mx-auto px-6 text-center space-y-10">
           <h2 className="text-5xl font-bold" style={{ fontFamily: "Gilroy-ExtraBold" }}>
-            Complete Customization Without a Single Line of Code
+            Customization Simplified
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Take control with a fully customizable form and dashboard experience designed for teams of all kinds.
-            Adapt the look and feel to fit your unique needs, all without needing to dive into code.
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            Empower your team with customizable tools that fit seamlessly into your workflow. Adapt forms, dashboards, and workflows with just a few clicks—no coding required.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Customizable Forms",
-                description: "Create your own forms with a simple drag-and-drop interface for every field your team needs.",
-              },
-              {
-                title: "Dynamic Dashboards",
-                description: "Tailor dashboards with widgets and charts, focusing on the stats that matter most.",
-              },
-              {
-                title: "No Coding Required",
-                description: "Configure and deploy easily, making real-time adjustments as needed without coding skills.",
-              },
-            ].map((feature, index) => (
-              <div key={index} className="p-8 rounded-lg bg-[#22252c] shadow-md hover:shadow-lg hover:scale-105 transition-transform">
-                <h3 className="text-2xl font-semibold">{feature.title}</h3>
-                <p className="text-gray-400 mt-4">{feature.description}</p>
-              </div>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            <div className="p-8 rounded-lg bg-[#1f242b] shadow-lg hover:shadow-2xl transition-shadow">
+              <h3 className="text-2xl font-semibold">Intuitive Forms</h3>
+              <p className="text-gray-400 mt-4">
+                Design forms tailored to your data collection needs with a simple drag-and-drop interface.
+              </p>
+            </div>
+            <div className="p-8 rounded-lg bg-[#1f242b] shadow-lg hover:shadow-2xl transition-shadow">
+              <h3 className="text-2xl font-semibold">Modular Dashboards</h3>
+              <p className="text-gray-400 mt-4">
+                Customize dashboards to highlight your most important metrics and insights.
+              </p>
+            </div>
+            <div className="p-8 rounded-lg bg-[#1f242b] shadow-lg hover:shadow-2xl transition-shadow">
+              <h3 className="text-2xl font-semibold">Real-Time Updates</h3>
+              <p className="text-gray-400 mt-4">
+                Adjust and view your customized setup in real-time without ever needing to code.
+              </p>
+            </div>
           </div>
-          <button className="bg-[#e74c3c] text-white px-8 py-4 rounded-md font-medium hover:bg-[#c0392b] transition-colors">
+          <button
+            className="mt-8 bg-[#e74c3c] text-white px-10 py-4 rounded-md font-medium hover:bg-[#c0392b] transition-colors"
+            onClick={() => window.location.href = '/download'}
+          >
             Start Customizing
           </button>
         </div>
       </div>
 
-      {/* Server Management Section */}
-      <div className="h-screen bg-[#111217] text-white flex items-center justify-center py-20">
-        <div className="max-w-6xl mx-auto px-6 text-center space-y-12">
+      {/* Redesigned "Server Management" section */}
+      <div className="h-screen bg-[#0e1015] text-white flex items-center justify-center">
+        <div className="max-w-7xl mx-auto px-6 text-center space-y-12">
           <h2 className="text-5xl font-bold" style={{ fontFamily: "Gilroy-ExtraBold" }}>
-            Run Your Own Server, Share with Other Teams
+            Secure Server Management
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Maintain complete control and data security by hosting your server, while collaborating and sharing insights with other teams.
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            Run your own server and manage data independently. Collaborate with other teams while maintaining full control of your data.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[
-              {
-                icon: faServer,
-                title: "Independent Server Management",
-                description: "Host your server for data privacy and team independence, managing access and security.",
-              },
-              {
-                icon: faUsers,
-                title: "Collaborate Across Teams",
-                description: "Share your server with others, enabling safe collaboration and joint project management.",
-              },
-            ].map((feature, index) => (
-              <div key={index} className="flex flex-col items-center p-6 bg-[#22252c] rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-transform">
-                <FontAwesomeIcon icon={feature.icon} className="w-12 h-12 text-[#e74c3c] mb-4" />
-                <h3 className="text-2xl font-semibold">{feature.title}</h3>
-                <p className="text-gray-400 text-center mt-4">{feature.description}</p>
-              </div>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+            <div className="p-10 bg-[#1a1e24] rounded-lg shadow-md hover:shadow-xl transition-shadow flex flex-col items-center">
+              <FontAwesomeIcon icon={faServer} className="w-12 h-12 text-[#e74c3c]" />
+              <h3 className="mt-6 text-2xl font-semibold">Self-Hosted Servers</h3>
+              <p className="text-gray-400 mt-4 text-center">
+                Host your server to keep data secure and maintain complete control over your team's operations.
+              </p>
+            </div>
+            <div className="p-10 bg-[#1a1e24] rounded-lg shadow-md hover:shadow-xl transition-shadow flex flex-col items-center">
+              <FontAwesomeIcon icon={faUsers} className="w-12 h-12 text-[#e74c3c]" />
+              <h3 className="mt-6 text-2xl font-semibold">Seamless Collaboration</h3>
+              <p className="text-gray-400 mt-4 text-center">
+                Connect with other teams easily while ensuring data privacy and secure communications.
+              </p>
+            </div>
           </div>
-          <button className="bg-[#e74c3c] text-white px-8 py-4 rounded-md font-medium hover:bg-[#c0392b] transition-colors">
-            Learn More About Server Management
+          <button
+            className="mt-8 bg-[#e74c3c] text-white px-10 py-4 rounded-md font-medium hover:bg-[#c0392b] transition-colors"
+            onClick={() => window.location.href = '/download'}
+          >
+            Learn More
           </button>
         </div>
       </div>
