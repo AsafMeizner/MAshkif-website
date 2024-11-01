@@ -26,50 +26,26 @@ const DownloadPage = () => {
         </p>
       </div>
 
+      const DOWNLOAD_LINKS = [
+        { href: "https://apps.apple.com", icon: faApple, text: "App Store" },
+        { href: "https://play.google.com", icon: faGooglePlay, text: "Play Store" },
+        { href: "https://github.com", icon: faGithub, text: "GitHub" },
+        { href: "https://www.microsoft.com/store", icon: faWindows, text: "Microsoft Store" },
+      ];
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-        {/* App Store Button */}
-        <a
-          href="https://apps.apple.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-[#1a1e24] px-8 py-4 rounded-md flex items-center justify-center hover:bg-[#2c3137] transition"
-        >
-          <FontAwesomeIcon icon={faApple} className="w-6 h-6 mr-2 text-[#e74c3c]" />
-          <span className="font-medium">App Store</span>
-        </a>
-
-        {/* Play Store Button */}
-        <a
-          href="https://play.google.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-[#1a1e24] px-8 py-4 rounded-md flex items-center justify-center hover:bg-[#2c3137] transition"
-        >
-          <FontAwesomeIcon icon={faGooglePlay} className="w-6 h-6 mr-2 text-[#e74c3c]" />
-          <span className="font-medium">Play Store</span>
-        </a>
-
-        {/* GitHub Button */}
-        <a
-          href="https://github.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-[#1a1e24] px-8 py-4 rounded-md flex items-center justify-center hover:bg-[#2c3137] transition"
-        >
-          <FontAwesomeIcon icon={faGithub} className="w-6 h-6 mr-2 text-[#e74c3c]" />
-          <span className="font-medium">GitHub</span>
-        </a>
-
-        {/* Microsoft Store Button */}
-        <a
-          href="https://www.microsoft.com/store"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-[#1a1e24] px-8 py-4 rounded-md flex items-center justify-center hover:bg-[#2c3137] transition"
-        >
-          <FontAwesomeIcon icon={faWindows} className="w-6 h-6 mr-2 text-[#e74c3c]" />
-          <span className="font-medium">Microsoft Store</span>
-        </a>
+        {DOWNLOAD_LINKS.map(({ href, icon, text }) => (
+          <a
+            key={text}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#1a1e24] px-8 py-4 rounded-md flex items-center justify-center hover:bg-[#2c3137] transition"
+          >
+            <FontAwesomeIcon icon={icon} className="w-6 h-6 mr-2 text-[#e74c3c]" />
+            <span className="font-medium">{text}</span>
+          </a>
+        ))}
       </div>
 
       <div className="flex flex-col items-center">
