@@ -15,6 +15,13 @@ const DownloadPage = () => {
     }
   }, []);
 
+  const DOWNLOAD_LINKS = [
+    { href: "https://apps.apple.com", icon: faApple, text: "App Store" },
+    { href: "https://play.google.com", icon: faGooglePlay, text: "Play Store" },
+    { href: "https://github.com", icon: faGithub, text: "GitHub" },
+    { href: "https://www.microsoft.com/store", icon: faWindows, text: "Microsoft Store" },
+  ];
+
   return (
     <div className="min-h-screen bg-[#111217] text-white flex flex-col items-center justify-center py-20 px-6">
       <div className="text-center mb-12">
@@ -25,14 +32,7 @@ const DownloadPage = () => {
           Get the Mashkif app on your preferred platform. Stay connected and enhance your productivity.
         </p>
       </div>
-
-      const DOWNLOAD_LINKS = [
-        { href: "https://apps.apple.com", icon: faApple, text: "App Store" },
-        { href: "https://play.google.com", icon: faGooglePlay, text: "Play Store" },
-        { href: "https://github.com", icon: faGithub, text: "GitHub" },
-        { href: "https://www.microsoft.com/store", icon: faWindows, text: "Microsoft Store" },
-      ];
-
+      
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
         {DOWNLOAD_LINKS.map(({ href, icon, text }) => (
           <a
